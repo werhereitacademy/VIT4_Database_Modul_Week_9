@@ -1,0 +1,24 @@
+1-İlk isminde Nick, Ed ve Jennifer adları bulunan aktörlerin adı ve soyadı:
+SELECT first_name, last_name FROM actor WHERE first_name IN ('Nick', 'Ed', 'Jennifer')
+2-İlk isminde adları Ed, Nick ve Jennifer olan aktörlerin sadece soyadı:
+SELECT last_name FROM actor WHERE first_name IN ('Ed', 'Nick', 'Jennifer')
+3-Adres tablosunun bütün ayrıntıları:
+SELECT * FROM address
+4-Adres tablosunda ilçe ve telefonu (district & phone) azalan sırada gösterme:
+SELECT * FROM address ORDER BY district DESC, phone DESC
+5-Film ve envanter tablosundaki film_id'yi kullanarak, Film tablosundan film_id, title ve Envanter tablosundan envanter_id'sini gösterme:
+SELECT f.film_id, f.title, i.inventory_id FROM film f INNER JOIN inventory i ON f.film_id = i.film_id
+6-Envanter ve kiralama tablolarından oluşan ilk 5 satırı gösterme:
+SELECT * FROM inventory LIMIT 5
+7-Kiralama ve Ödeme tablolarından oluşan amount'a göre azalan olarak sıralanmış rental_id, rental_date, payment_id'den oluşan ilk 10 satırı gösterme:
+SELECT r.rental_id, r.rental_date, p.payment_id FROM rental r INNER JOIN payment p ON r.rental_id = p.rental_id ORDER BY p.amount DESC LIMIT 10
+8-Actor tablosunda actor_id'nin boş olduğu satırların diğer detayları:
+SELECT * FROM actor WHERE actor_id IS NULL
+9-Actor tablosunda actor_id'nin boş olmadığı satırların diğer detayları:
+SELECT * FROM actor WHERE actor_id IS NOT NULL
+10-Film tablosunda boş olmayan satır sayısı:
+SELECT COUNT(*) FROM film WHERE film_id IS NOT NULL
+11-Payment tablosundan amount'un toplamını sum_amt olarak gösterme:
+SELECT SUM(amount) AS sum_amt FROM payment
+12-Payment tablosundan maximum ve minimum amount'u gösterme:
+SELECT MAX(amount) AS max_amt, MIN(amount) AS min_amt FROM payment
