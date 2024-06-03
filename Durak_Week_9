@@ -22,3 +22,6 @@ SELECT COUNT(*) FROM film WHERE film_id IS NOT NULL
 SELECT SUM(amount) AS sum_amt FROM payment
 12-Payment tablosundan maximum ve minimum amount'u gösterme:
 SELECT MAX(amount) AS max_amt, MIN(amount) AS min_amt FROM payment
+Hackerrank slution is:
+*/SELECT CITY, STATE
+FROM STATION;
