@@ -1,0 +1,7 @@
+# Question_2
+# Show only the last name of the actor whose first names are Ed, Nick and Jennifer.
+
+
+# Answer
+SELECT last_name FROM actor 
+WHERE first_name IN ('Nick','Ed','Jennifer');
