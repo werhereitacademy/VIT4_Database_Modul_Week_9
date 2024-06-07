@@ -1,7 +1,0 @@
-# Question_4
-# Show district and phone in descending order in address table
-
-
-# Answer
-SELECT district, phone FROM address 
-ORDER BY district DESC, phone DESC;
